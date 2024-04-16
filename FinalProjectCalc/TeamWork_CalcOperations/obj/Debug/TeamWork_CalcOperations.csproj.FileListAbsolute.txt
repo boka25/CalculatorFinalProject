@@ -1,0 +1,6 @@
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\bin\Debug\TeamWork_CalcOperations.dll
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\bin\Debug\TeamWork_CalcOperations.pdb
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\obj\Debug\TeamWork_CalcOperations.csproj.AssemblyReference.cache
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\obj\Debug\TeamWork_CalcOperations.csproj.CoreCompileInputs.cache
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\obj\Debug\TeamWork_CalcOperations.dll
+C:\Users\XaVeTgg\source\repos\TeamWork_CalcOperations\obj\Debug\TeamWork_CalcOperations.pdb

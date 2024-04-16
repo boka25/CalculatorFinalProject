@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TeamWork_Calc/1.0.0": {
+        "dependencies": {
+          "TeamWork_CalcOperations": "1.0.0"
+        },
+        "runtime": {
+          "TeamWork_Calc.dll": {}
+        }
+      },
+      "TeamWork_CalcOperations/1.0.0": {
+        "runtime": {
+          "TeamWork_CalcOperations.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TeamWork_Calc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TeamWork_CalcOperations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
