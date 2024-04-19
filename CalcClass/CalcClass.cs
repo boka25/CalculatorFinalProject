@@ -22,6 +22,9 @@ namespace CalcClass
                 case '/':
                     return Div(op1, op2);
                     break;
+                case '%':
+                    return Mod(op1, op2);
+                    break;
 
                 default:
                     throw new InvalidOperationException();
@@ -33,6 +36,7 @@ namespace CalcClass
         private double Multipl(double a, double b) => a * b;
         private double Add(double a, double b) => a + b;
         private double Minus(double a, double b) => a - b;
+        private double Mod(double a, double b) => a % b;
         private double Div(double a, double b)
         { 
             if(b == 0)throw new DivideByZeroException();

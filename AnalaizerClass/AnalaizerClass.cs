@@ -33,7 +33,7 @@
                 throw new Exception(errorCode);
             }
             char[] arrayOfDigitChars = new[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
-            char[] arrayOfOperationChars = new[] {'+', '-', '*', '/'};
+            char[] arrayOfOperationChars = new[] {'+', '-', '*', '/', '%'};
             char[] arrayOfBrackets = new[] { '(', ')' };
 
             if(arrayOfOperationChars.Contains(InputString[InputString.Length-1] ))
@@ -44,7 +44,7 @@
             }
             for (int i = 0; i < InputString.Length; i++)
             {
-                if (!arrayOfDigitChars.Contains(InputString[i]) && !arrayOfOperationChars.Contains(InputString[i]) && !arrayOfBrackets.Contains(InputString[i]))
+                if (InputString[i]!='i' && !arrayOfDigitChars.Contains(InputString[i]) && !arrayOfOperationChars.Contains(InputString[i]) && !arrayOfBrackets.Contains(InputString[i]))
                 {
                     errorCode = "Error 02";
                     erposition = i;
@@ -103,6 +103,12 @@
                 else if (CalcObjects[i].Priority == 1) { Stack.Push(CalcObjects[i]); }
                 else if (CalcObjects[i].Priority > 1)
                 {
+                    if (CalcObjects[i].Priority == 4)
+                    {
+                        CurrentString.Last().Token = CurrentString.Last().Token.Insert(0, "-");
+                        continue;
+                    }
+                    
                     while (Stack.Count != 0)
                     {
                         if (Stack.Peek().Priority >= CalcObjects[i].Priority) CurrentString.Add(Stack.Pop());
@@ -137,10 +143,11 @@
                 }
                 else
                 {
-                    if (InputString[i] == '/' || InputString[i] == '*') { CalcObjects.Add(new CalcObjects(InputString[i].ToString(), 3)); }
+                    if (InputString[i] == '/' || InputString[i] == '*' || InputString[i] == '%') { CalcObjects.Add(new CalcObjects(InputString[i].ToString(), 3)); }
                     else if (InputString[i] == '+' || InputString[i] == '-'){ CalcObjects.Add(new CalcObjects(InputString[i].ToString(), 2));}
                     else if (InputString[i] == '(') CalcObjects.Add(new CalcObjects(InputString[i].ToString(), 1));
                     else if (InputString[i] == ')') CalcObjects.Add(new CalcObjects(InputString[i].ToString(), -1));
+                    else if (InputString[i] == 'i') CalcObjects.Add(new CalcObjects(InputString[i].ToString(), 4));
                 }
             }
             if(CalcObjects.Count > 30)

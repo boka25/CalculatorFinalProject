@@ -118,12 +118,13 @@ namespace FinalProject
         private void button21_Click(object sender, EventArgs e)
         {
             textBoxOut.Text = "";
-            
+
             var ac = new AnalaizerClass.AnalaizerClass(textBoxIn.Text);
-            try 
+            try
             {
                 ac.Calc();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 textBoxOut.Text = ac.errorCode + " at position " + ac.erposition;
             }
@@ -156,6 +157,35 @@ namespace FinalProject
                 if (ac.Stack.Count > 0)
                     textBoxOut.Text = ac.Stack.Pop().Token.ToString();
                 else { }
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBoxIn.Text += "%";
+        }
+
+        private void btnChangeSign_Click(object sender, EventArgs e)
+        {
+            //uMinus();
+            textBoxIn.Text += "i";
+        }
+
+        public void uMinus()
+        {
+            string inputStr = textBoxIn.Text;
+            string strResult = "";
+            int i= inputStr.Length - 1;
+            if (!Char.IsDigit(inputStr[i]))
+                textBoxOut.Text = "Error 01";
+            else {
+                do
+                {
+                    strResult += inputStr[i];
+                    i--;
+                } while (i != 0 && Char.IsDigit(inputStr[i]));
+                textBoxIn.Text = textBoxIn.Text.Insert(inputStr.Length-strResult.Length, "-");
+
             }
         }
     }

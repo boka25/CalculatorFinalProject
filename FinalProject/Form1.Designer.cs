@@ -269,6 +269,7 @@
             btnChangeSign.TabIndex = 13;
             btnChangeSign.Text = "+/-";
             btnChangeSign.UseVisualStyleBackColor = true;
+            btnChangeSign.Click += btnChangeSign_Click;
             // 
             // btn0
             // 
@@ -323,6 +324,7 @@
             button17.TabIndex = 19;
             button17.Text = "mod";
             button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
             // 
             // button21
             // 
